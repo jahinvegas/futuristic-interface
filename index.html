@@ -434,5 +434,56 @@
     });
     }, 2000);
     </script>
+
+<!-- SPINNING BLACKHOLE FOOTER -->
+<footer>
+  <!-- MINIMAL ICON BLACK HOLE -->
+  <img src="https://cdn.abacus.ai/images/3b3fc8a7-4195-4b70-868f-5f3ae0b78b76.png" alt="Minimal Black Hole Logo">
+  <p>&copy; 2025 Blackhole Attraction. All Rights Reserved.</p>
+</footer>
+
+<!-- Warp Filters -->
+<svg>
+  <filter id="warp">
+    <feTurbulence type="fractalNoise" baseFrequency="0.015 0.025" numOctaves="2" seed="2" result="warp">
+      <animate attributeName="baseFrequency" dur="10s" values="0.015 0.025;0.02 0.03;0.015 0.025" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="20" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="warpStrong">
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.04" numOctaves="3" seed="8" result="warpStrong">
+      <animate attributeName="baseFrequency" dur="6s" values="0.02 0.04;0.035 0.06;0.02 0.04" repeatCount="indefinite"/>
+    </feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="warpStrong" scale="40" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<style>
+footer {
+  background: rgba(0,0,0,0.85);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+footer img {
+  width: 120px; 
+  height: 120px;
+  filter: url(#warp) drop-shadow(0px 0px 20px #0ff);
+  transition: all 1s ease;
+}
+
+footer img:hover {
+  transform: rotate(720deg) scale(1.5);
+  filter: url(#warpStrong) drop-shadow(0px 0px 45px #ff0);
+}
+
+footer p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #ccc;
+  letter-spacing: 2px;
+}
+</style>
+
 </body>
 </html>
